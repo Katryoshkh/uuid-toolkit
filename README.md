@@ -29,12 +29,6 @@ Ensure the following components are installed:
 
 * pip (Python package manager)
 
-> Recommended optional packages:
-              
-* virtualenv (for isolated environments)
-
-
-
 **2. Installation**
 
 * Debian/Ubuntu:
