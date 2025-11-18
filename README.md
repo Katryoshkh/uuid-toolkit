@@ -1,13 +1,11 @@
-## UUID Toolkit
+# UUID Toolkit
 
 A professional, cross‑platform command‑line utility for generating, validating, formatting, and inspecting UUIDs. Designed for reliability, clarity, and operational consistency across multiple environments.
 
-## Overview
-
-The UUID Toolkit provides a unified interface for interacting with Universally Unique Identifiers (UUIDs). It includes commands for generating various UUID versions, validating existing UUID strings, converting formats, and retrieving metadata. The tool is built with clean, maintainable architecture and is suitable for enterprise‑grade workflows.
+The UUID Toolkit provides a unified interface for interacting with Universally Unique Identifiers (UUIDs). It includes commands for generating various UUID versions, validating existing UUID strings, converting formats, and retrieving metadata.
 
 
-## Features
+# Features
 
 * Generate UUIDs (v1, v3, v4, v5)
 
@@ -21,7 +19,7 @@ The UUID Toolkit provides a unified interface for interacting with Universally U
 
 * Fully cross‑platform (Linux, macOS, Windows)
 
-## Installation
+# Installation
 
 **1. Requirements**
 
@@ -37,68 +35,62 @@ Recommended optional packages:
 
 
 
-**2. Installation on Linux / macOS**
+**2. Installation**
 
 * Debian/Ubuntu:
 ```
 sudo apt update
 sudo apt install python3 python3-pip git -y
-git clone https://github.com/yourname/uuid-toolkit.git
+git clone https://github.com/katryoshkh/uuid-toolkit.git
 cd uuid-toolkit
-python3 uuid-toolkit.py v4
 ```
 
 * Fedora / RHEL: 
 ```
 sudo dnf install python3 python3-pip git -y
-git clone https://github.com/yourname/uuid-toolkit.git
+git clone https://github.com/katryoshkh/uuid-toolkit.git
 cd uuid-toolkit
-python3 uuid-toolkit.py v4
 ```
 
 * Arch / Manjaro:
 ```
 sudo pacman -S python python-pip git
-git clone https://github.com/yourname/uuid-toolkit.git
+git clone https://github.com/katryoshkh/uuid-toolkit.git
 cd uuid-toolkit
-python uuid-toolkit.py v4
 ```
   
 * macOS Homebrew:
 ```
 brew install python git
-git clone https://github.com/yourname/uuid-toolkit.git
+git clone https://github.com/katryoshkh/uuid-toolkit.git
 cd uuid-toolkit
-python3 uuid-toolkit.py v4
 ```
 
-* Android:
+* Android (Termux):
 ```
 pkg update
 pkg install python git -y
-git clone https://github.com/yourname/uuid-toolkit.git
+git clone https://github.com/katryoshkh/uuid-toolkit.git
 cd uuid-toolkit
-python uuid-toolkit.py v4
 ```
 
 * Windows (PowerShell):
 > Install Python from [python.org](https://python.org)
 ```
-git clone https://github.com/yourname/uuid-toolkit.git
+git clone https://github.com/katryoshkh/uuid-toolkit.git
 cd uuid-toolkit
-python uuid-toolkit.py v4
 ```
 
-## Usage
+# Usage
 
 Basic Command Structure:
 ```
 python uuid-toolkit.py <command> [options]
 ```
 
-## Command Reference
+# Command Reference
 
-**Command Table**
+## **Command Table**
 
 | Command           | Arguments                | Description                                                         | Example Usage                                               | Notes                                                   |
 |-------------------|---------------------------|---------------------------------------------------------------------|--------------------------------------------------------------|---------------------------------------------------------|
@@ -110,9 +102,9 @@ python uuid-toolkit.py <command> [options]
 | `validate`        | `<uuid>`                 | Validates whether a string is a valid UUID.                        | `python uuid-toolkit.py validate <uuid>`                    | Detects malformed or invalid UUIDs.                    |
 | `info`            | `<uuid>`                 | Shows details of a UUID (version, variant, validity).              | `python uuid-toolkit.py info <uuid>`                        | Identify UUID version used by external systems.        |
 
-## Detailed Command Specifications
+## **Detailed Command Specifications**
 
-**1. generate**
+**1. Generate**
 
 Generates a UUID of the selected version.
 
@@ -132,7 +124,7 @@ Generates a UUID of the selected version.
 python uuid-toolkit.py v4
 ```
 
-**2. validate**
+**2. Validate**
 
 Checks whether the provided UUID string is valid.
 
@@ -141,56 +133,57 @@ Checks whether the provided UUID string is valid.
 python uuid-toolkit.py validate 550e8400-e29b-41d4-a716-446655440000
 ```
 
-**3. format**
+**3. Format**
 
 Converts the UUID to different representations.
 
 **Options:**
 
-* --uppercase
+* --upper
 
-* --lowercase
-
-* --urn
-
+* --lower
 
 **Example:**
 ```
-python uuid-toolkit.py format --uppercase <uuid>
+python uuid-toolkit.py v4 --upper
+```
+```
+python uuid-toolkit.py v4 --lower
 ```
 
-**4. inspect**
-
-Displays metadata such as version, variant, timestamp (v1), and namespaces.
-
-**Example:**
-```
-python uuid-toolkit.py inspect <uuid>
-```
-
-**5. batch**
+**4. Batch**
 
 Generates multiple UUIDs.
 
 **Options:**
 
 * --count <n>
-
-* UUID version flags (v1, v4, etc.)
-
+* -n
 
 **Example:**
 ```
-python uuid-toolkit.py batch --count 50 --v4
+python uuid-toolkit.py v4 --count 50
+```
+```
+python uuid-toolkit.py v4 -n 50
+```
+
+**5. Saving Results to a File**
+Saving output results to a external file.
+
+**Options:**
+
+* --output <path>
+* -o <path>
+
+**Example:**
+```
+python uuid-toolkit.py v4 --output uuid.txt
+```
+```
+python uuid-toolkit.py v4 --o uuid.txt
 ```
 
 ## License
 
-This project is distributed under an open, corporate‑friendly license.
-
-
----
-
-## Support
-
-For enterprise support or integration guidance, contact the project maintainer.
+This project is distributed under Apache 2.0 license.
