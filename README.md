@@ -122,11 +122,11 @@ python uuid-toolkit.py v4
 
 **2. Validate**
 
+Validates whether a provided UUID string is correctly formatted and optionally checks for a specific version.
+
 
 
 **Options:**
-
-Validates whether a provided UUID string is correctly formatted and optionally checks for a specific version.
 
 * `<uuid>` : The UUID string to validate.  
 * `--version <1|3|4|5>` : (Optional) Check if the UUID matches the specified version.  
@@ -136,14 +136,18 @@ Validates whether a provided UUID string is correctly formatted and optionally c
 ```
 python uuid-toolkit.py validate 550e8400-e29b-41d4-a716-446655440000
 ```
+```
+python uuid-toolkit.py validate 550e8400-ea83d16a-732b-408a-b1ee-d4b8740a476b --quiet
+```
 
 
 **3. Format**
 
+Adjusts the output representation of UUIDs. Can be combined with generation or batch commands.
+
+
 
 **Options:**
-
-Adjusts the output representation of UUIDs. Can be combined with generation or batch commands.
 
 * `--upper` : Converts UUIDs to uppercase letters.  
 * `--lower` : Converts UUIDs to lowercase letters.  
