@@ -1,9 +1,8 @@
 # UUID Toolkit
 
-UUID TOOLKIT is a professional, cross‑platform command‑line utility for generating, validating, formatting, and inspecting UUIDs. Designed for reliability, clarity, and operational consistency across multiple environments.
+UUID Toolkit is a professional, cross‑platform command‑line utility for generating, validating, formatting, and inspecting UUIDs. Designed for reliability, clarity, and operational consistency across multiple environments.
 
-The UUID Toolkit provides a unified interface for interacting with Universally Unique Identifiers (UUIDs). It includes commands for generating various UUID versions, validating existing UUID strings, converting formats, and retrieving metadata.
-
+The UUID Toolkit provides a unified interface for interacting with Universally Unique Identifiers (UUIDs). 
 
 # Features
 
@@ -16,6 +15,8 @@ The UUID Toolkit provides a unified interface for interacting with Universally U
 * Deterministic namespace‑based UUID creation
 
 * Fully cross‑platform (Linux, macOS, Windows)
+
+* Output formatting (upper/lower/plain/JSON)
 
 # Installation
 
@@ -137,6 +138,10 @@ Converts the UUID to different representations.
 
 * --lower
 
+* --format json
+
+* --format plain
+
 **Example:**
 ```
 python uuid-toolkit.py v4 --upper
@@ -144,6 +149,13 @@ python uuid-toolkit.py v4 --upper
 ```
 python uuid-toolkit.py v4 --lower
 ```
+```
+python uuid-toolkit.py v4 --format json
+```
+```
+python uuid-toolkit.py v4 --format plain
+```
+
 
 **4. Batch**
 
@@ -164,7 +176,7 @@ python uuid-toolkit.py v4 -n 50
 
 **5. Saving Results to a File**
 
-Saving output results to a external file.
+Saving output results to an external file.
 
 **Options:**
 
@@ -176,7 +188,7 @@ Saving output results to a external file.
 python uuid-toolkit.py v4 --output uuid.txt
 ```
 ```
-python uuid-toolkit.py v4 --o uuid.txt
+python uuid-toolkit.py v4 -o uuid.txt
 ```
 
 ## License
