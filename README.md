@@ -9,9 +9,7 @@ The UUID Toolkit provides a unified interface for interacting with Universally U
 
 * Generate UUIDs (v1, v3, v4, v5)
 
-* Validate and inspect UUID strings
-
-* Convert UUID formats (uppercase, lowercase, URN)
+* Validate UUID strings
 
 * Batch generation
 
@@ -95,9 +93,8 @@ python uuid-toolkit.py <command> [options]
 | `v3`              | `<namespace> <name>`     | Deterministic MD5-based UUID. Same inputs → same UUID.             | `python uuid-toolkit.py v3 DNS example.com`                 | Uses MD5 (weak hash).                                   |
 | `v4`              | *(none)*                 | Generates a random UUID using secure RNG.                          | `python uuid-toolkit.py v4`                                 | Best general-purpose version.                          |
 | `v5`              | `<namespace> <name>`     | Deterministic SHA-1-based UUID.                                    | `python uuid-toolkit.py v5 URL https://example.com`         | More secure than v3, deterministic.                    |
-| `list-namespaces` | *(none)*                 | Displays available namespaces and their UUID values.                | `python uuid-toolkit.py list-namespaces`                    | Helpful for v3/v5 generation.                          |
+| `help` | *(none)*                 | Displays help feature               | `python uuid-toolkit.py --help`                    | -                          |
 | `validate`        | `<uuid>`                 | Validates whether a string is a valid UUID.                        | `python uuid-toolkit.py validate <uuid>`                    | Detects malformed or invalid UUIDs.                    |
-| `info`            | `<uuid>`                 | Shows details of a UUID (version, variant, validity).              | `python uuid-toolkit.py info <uuid>`                        | Identify UUID version used by external systems.        |
 
 ## **Detailed Command Specifications**
 
