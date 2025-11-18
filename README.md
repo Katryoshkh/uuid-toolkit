@@ -29,6 +29,9 @@ Ensure the following components are installed:
 
 * pip (Python package manager)
 
+
+
+
 **2. Installation**
 
 * Debian/Ubuntu:
