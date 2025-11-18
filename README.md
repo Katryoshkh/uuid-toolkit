@@ -184,4 +184,4 @@ python uuid-toolkit.py v4 --o uuid.txt
 
 ## License
 
-This project is distributed under Apache 2.0 license.
+This project is licensed under the Apache License 2.0. You may use, modify, and distribute the software under the terms defined in the Apache 2.0 license.
