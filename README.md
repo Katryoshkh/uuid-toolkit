@@ -29,7 +29,7 @@ Ensure the following components are installed:
 
 * pip (Python package manager)
 
-Recommended optional packages:
+> Recommended optional packages:
               
 * virtualenv (for isolated environments)
 
