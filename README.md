@@ -1,8 +1,6 @@
 # UUID Toolkit
 
-UUID Toolkit is a professional, cross‑platform command‑line utility for generating, validating, formatting, and inspecting UUIDs. Designed for reliability, clarity, and operational consistency across multiple environments.
-
-The UUID Toolkit provides a unified interface for interacting with Universally Unique Identifiers (UUIDs). 
+UUID Toolkit is a professional, cross‑platform command‑line utility for generating, and validating. Designed for reliability, clarity, and operational consistency across multiple environments. The UUID Toolkit provides a unified interface for interacting with Universally Unique Identifiers (UUIDs). 
 
 # Features
 
@@ -101,17 +99,19 @@ python uuid-toolkit.py <command> [options]
 
 **1. Generate**
 
-Generates a UUID of the selected version.
+Generates a UUID of the selected version. Each version has its own method of generation:
+
+
 
 **Options:**
 
-* v1 : Time‑based UUID
+* v1 : Time‑based UUID, derived from the current timestamp and MAC address. Deterministic for a given time and node, but may expose MAC address.
 
-* v3 <namespace> <name> : MD5 namespace‑based UUID
+* v3 <namespace> <name> : Deterministic MD5-based UUID. Same namespace and name will always produce the same UUID. Uses MD5 hashing.
 
-* v4 : Random UUID
+* v4 : Random UUID using a secure random number generator. Best choice for general purposes.
 
-* v5 <namespace> <name> : SHA‑1 namespace‑based UUID
+* v5 <namespace> <name> : Deterministic SHA-1-based UUID. More secure than v3, same inputs produce same UUID.
 
 
 **Example:**
@@ -119,28 +119,37 @@ Generates a UUID of the selected version.
 python uuid-toolkit.py v4
 ```
 
+
 **2. Validate**
 
-Checks whether the provided UUID string is valid.
+
+
+**Options:**
+
+Validates whether a provided UUID string is correctly formatted and optionally checks for a specific version.
+
+* `<uuid>` : The UUID string to validate.  
+* `--version <1|3|4|5>` : (Optional) Check if the UUID matches the specified version.  
+* `--quiet` : Suppress output; exit code 0 if valid, non-zero otherwise.
 
 **Example:**
 ```
 python uuid-toolkit.py validate 550e8400-e29b-41d4-a716-446655440000
 ```
 
+
 **3. Format**
 
-Converts the UUID to different representations.
 
 **Options:**
 
-* --upper
+Adjusts the output representation of UUIDs. Can be combined with generation or batch commands.
 
-* --lower
+* `--upper` : Converts UUIDs to uppercase letters.  
+* `--lower` : Converts UUIDs to lowercase letters.  
+* `--format json` : Outputs UUIDs in a JSON array.  
+* `--format plain` : Outputs UUIDs as plain text, one per line (default).
 
-* --format json
-
-* --format plain
 
 **Example:**
 ```
@@ -157,14 +166,17 @@ python uuid-toolkit.py v4 --format plain
 ```
 
 
+
 **4. Batch**
 
-Generates multiple UUIDs.
+Generates multiple UUIDs in a single command.
+
+
 
 **Options:**
 
-* --count <n>
-* -n
+* `--count <n>` or `-n <n>` : Specifies the number of UUIDs to generate. Must be ≥ 1.  
+* Compatible with all generation versions (`v1`, `v3`, `v4`, `v5`).
 
 **Example:**
 ```
@@ -176,12 +188,9 @@ python uuid-toolkit.py v4 -n 50
 
 **5. Saving Results to a File**
 
-Saving output results to an external file.
+Redirects the command output to an external file instead of standard output.
 
-**Options:**
-
-* --output <path>
-* -o <path>
+* `--output <path>` or `-o <path>` : Specifies the file path to save the UUIDs. Overwrites if file exists.
 
 **Example:**
 ```
