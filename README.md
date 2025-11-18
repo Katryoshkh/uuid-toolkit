@@ -1,6 +1,6 @@
 # UUID Toolkit
 
-A professional, cross‑platform command‑line utility for generating, validating, formatting, and inspecting UUIDs. Designed for reliability, clarity, and operational consistency across multiple environments.
+UUID TOOLKIT is a professional, cross‑platform command‑line utility for generating, validating, formatting, and inspecting UUIDs. Designed for reliability, clarity, and operational consistency across multiple environments.
 
 The UUID Toolkit provides a unified interface for interacting with Universally Unique Identifiers (UUIDs). It includes commands for generating various UUID versions, validating existing UUID strings, converting formats, and retrieving metadata.
 
